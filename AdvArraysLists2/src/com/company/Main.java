@@ -25,10 +25,10 @@ public class Main {
         // PseudoCode--------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        // System.out.print("Welcome. Would you like to login or create an account?");
-        // Get input from user, put it into a variable.
-        // If they enter "Create an account", print ("Enter a username for your account.")
-        // Have the application check if the username already exists. If it does, have them make a new username.
+        // System.out.print("Welcome. Would you like to login or create an account?");---------------------------------- Done
+        // Get input from user, put it into a variable. ---------------------------------------------------------------- Done
+        // If they enter "Create an account", print ("Enter a username for your account.")------------------------------ Done
+        // Have the application check if the username already exists. If it does, have them make a new username(loop?)--
         // System.out.println("Now make a password: ")
         // Once they make a password, print("Your account has been successfully created.")
         // Re-ask if they want to make an account or login, get more input
@@ -46,8 +46,15 @@ public class Main {
 
         Scanner console = new Scanner(System.in);
         String createOrLogin;
-        System.out.println("Welcome.  Would you like to create an account or login?");
-        //createOrLogin =
+        String username;
+        String password;
+        System.out.println("Welcome.  Would you like to login or create an account?");
+        createOrLogin = String.valueOf(console.nextLine());
+        if (createOrLogin.equals("create an account") || createOrLogin.equals("Create an account")){
+            System.out.println("Enter a username for your account: ");
+            username = String.valueOf(console.nextLine());
+        }
+        //At this point do I make a list/array so it can check if the username already exists?
 
 
 
@@ -67,47 +74,6 @@ public class Main {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -231,17 +197,3 @@ public class Main {
                 //Enter Password:
                 //Ross
                 //welcome, Bob
-
-
-
-
-
-
-
-
-
-
-
-
-
-

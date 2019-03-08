@@ -1,5 +1,6 @@
 package com.company;
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -25,18 +26,18 @@ public class Main {
         // PseudoCode--------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        // System.out.print("Welcome. Would you like to login or create an account?");---------------------------------- Done
+        // System.out.print("Welcome. Would you like to login or create an account?"); --------------------------------- Done
         // Get input from user, put it into a variable. ---------------------------------------------------------------- Done
-        // If they enter "Create an account", print ("Enter a username for your account.")------------------------------ Done
-        // Have the application check if the username already exists. If it does, have them make a new username(loop?)--
-        // System.out.println("Now make a password: ")
-        // Once they make a password, print("Your account has been successfully created.")
-        // Re-ask if they want to make an account or login, get more input
-        // If they choose "login", get user input by asking for their username and password
-        // Have it check if the username and password exist and match in the array/list
-        // If it does, print("Welcome, " + username) then close the program
-        // If it does not match, System.out.print("Your username or password do not match records")
-        // Go back to asking if they want to make an account or login
+        // If they enter "Create an account", print ("Enter a username for your account.") ----------------------------- Done
+        // Have the application check if the username already exists. If it does, have them make a new username(loop?)-- Done
+        // System.out.println("Now make a password: ") ----------------------------------------------------------------- Done
+        // Once they make a password, save it. print("Your account has been successfully created.") --------------------
+        // Re-ask if they want to make an account or login, get more input ---------------------------------------------
+        // If they choose "login", get user input by asking for their username and password ----------------------------
+        // Have it check if the username and password exist and match in the array/list --------------------------------
+        // If it does, print("Welcome, " + username) then close the program --------------------------------------------
+        // If it does not match, System.out.print("Your username or password do not match records") --------------------
+        // Go back to asking if they want to make an account or login --------------------------------------------------
 
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -47,119 +48,35 @@ public class Main {
         Scanner console = new Scanner(System.in);
         String createOrLogin;
         String username;
+        username = "1";
         String password;
-        System.out.println("Welcome.  Would you like to login or create an account?");
-        createOrLogin = String.valueOf(console.nextLine());
-        if (createOrLogin.equals("create an account") || createOrLogin.equals("Create an account")){
-            System.out.println("Enter a username for your account: ");
-            username = String.valueOf(console.nextLine());
+        ArrayList<String> usernameCheck = new ArrayList<String>();
+        ArrayList<String> passwordCheck = new ArrayList<String>();
+        while (true) {
+            System.out.println("Welcome.  Would you like to login or create an account?");
+            createOrLogin = String.valueOf(console.nextLine());
+            if (createOrLogin.equalsIgnoreCase("create an account")) {
+                System.out.println("Enter a username for your account: ");
+                username = String.valueOf(console.nextLine());
+            }
+            int k = 0;
+            while (k < usernameCheck.size()) {
+                if (usernameCheck.get(k).equals(username)) {
+                    System.out.println("This username already exists.");
+                    continue;
+                }
+                k++;
+            }
+            System.out.println("Now, make a password: ");
+            password = String.valueOf(console.nextLine());
+            System.out.println("Your account has been successfully created.");
         }
-        //At this point do I make a list/array so it can check if the username already exists?
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         //EXAMPLES:

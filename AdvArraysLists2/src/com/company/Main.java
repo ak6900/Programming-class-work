@@ -50,6 +50,8 @@ public class Main {
         String password;
         ArrayList<String> usernameCheck = new ArrayList<>();
         ArrayList<String> passwordCheck = new ArrayList<>();
+        usernameCheck.add("Filler");
+        passwordCheck.add("Filler");
         while (true) {
             System.out.println("Welcome.  Would you like to login or create an account?");
             createOrLogin = String.valueOf(console.nextLine());
@@ -66,9 +68,7 @@ public class Main {
                          System.out.println("This username already exists.");
                          usernameExists = true;
                      }
-                     System.out.println(usernameCheck.get(k));
                      k++;
-
                  }
                  if (!usernameExists) {
                      break;
@@ -80,44 +80,36 @@ public class Main {
                 passwordCheck.add(password);
                 System.out.println("Your account has been successfully created.");
             }
-
             if (createOrLogin.equalsIgnoreCase("Login")){
                 System.out.println("Enter your username: ");
-
                 username = String.valueOf(console.nextLine());
-                //check
                 int n = 0;
                 boolean usernameExists = false;
                 while (n < usernameCheck.size()) {
 
-                    if (!username.equalsIgnoreCase(usernameCheck.get(n))) {
-                        System.out.println("This username does not exist.");
-                        usernameExists = false;
+                    if (!username.equals(usernameCheck.get(n))) {
+
+                    }
+                    else {
+                        System.out.println("Enter your password: ");
+                        password = String.valueOf(console.nextLine());
+                        boolean passwordExists = false;
+                        if (!password.equals(passwordCheck.get(n))) {
+                            System.out.println("Incorrect password.");
+                            }
+                            else {
+                            System.out.println("Welcome, " + username);
+                            System.exit(0);
+                        }
+                        //System.out.println("Welcome, " + username);
+                        //System.exit(0);
                     }
                     n++;
-
                 }
-                if (!usernameExists) {
-                    break;
-                }
-
-
-
-
-
-
-                System.out.println("Enter your password: ");
-                password = String.valueOf(console.nextLine());
-                //check
-                System.out.println("Welcome, " + username);
             }
-
         }
-
     }
 }
-
-
         //EXAMPLES:
                 //Input          	Output
                 //Would you like to (create account) or (login)?

@@ -42,8 +42,6 @@ public class Main {
         //-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
-
         Scanner console = new Scanner(System.in);
         String createOrLogin;
         String username;
@@ -53,7 +51,7 @@ public class Main {
         usernameCheck.add("Filler");
         passwordCheck.add("Filler");
         while (true) {
-            System.out.println("Welcome.  Would you like to login or create an account?");
+            System.out.println("Welcome.  Would you like to 'login' or 'create an account?'");
             createOrLogin = String.valueOf(console.nextLine());
             if (createOrLogin.equalsIgnoreCase("create an account")) {
              while (true) {
@@ -101,8 +99,6 @@ public class Main {
                             System.out.println("Welcome, " + username);
                             System.exit(0);
                         }
-                        //System.out.println("Welcome, " + username);
-                        //System.exit(0);
                     }
                     n++;
                 }
